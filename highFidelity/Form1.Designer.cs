@@ -32,24 +32,18 @@
             this.lbl_search = new System.Windows.Forms.Label();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
             this.cmbbox_search = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtbx_size = new System.Windows.Forms.TextBox();
+            this.txtbx_color = new System.Windows.Forms.TextBox();
+            this.txtbx_stock = new System.Windows.Forms.TextBox();
+            this.txtbx_name = new System.Windows.Forms.TextBox();
             this.lbl_color = new System.Windows.Forms.Label();
             this.lbl_size = new System.Windows.Forms.Label();
             this.lbl_stock = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_edit = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.lstbx_items = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lbl_ineventoryName
@@ -82,6 +76,7 @@
             this.btn_add.TabIndex = 3;
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = false;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_edit
             // 
@@ -93,15 +88,15 @@
             this.btn_edit.Text = "Edit";
             this.btn_edit.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btn_delete
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(666, 316);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(183, 93);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_delete.BackColor = System.Drawing.Color.White;
+            this.btn_delete.Location = new System.Drawing.Point(666, 316);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(183, 93);
+            this.btn_delete.TabIndex = 5;
+            this.btn_delete.Text = "Delete";
+            this.btn_delete.UseVisualStyleBackColor = false;
             // 
             // cmbbox_search
             // 
@@ -112,37 +107,37 @@
             this.cmbbox_search.Size = new System.Drawing.Size(622, 54);
             this.cmbbox_search.TabIndex = 6;
             // 
-            // textBox2
+            // txtbx_size
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(1242, 265);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(396, 53);
-            this.textBox2.TabIndex = 9;
+            this.txtbx_size.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbx_size.Location = new System.Drawing.Point(1242, 265);
+            this.txtbx_size.Name = "txtbx_size";
+            this.txtbx_size.Size = new System.Drawing.Size(396, 53);
+            this.txtbx_size.TabIndex = 9;
             // 
-            // textBox3
+            // txtbx_color
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(1242, 523);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(396, 53);
-            this.textBox3.TabIndex = 11;
+            this.txtbx_color.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbx_color.Location = new System.Drawing.Point(1242, 523);
+            this.txtbx_color.Name = "txtbx_color";
+            this.txtbx_color.Size = new System.Drawing.Size(396, 53);
+            this.txtbx_color.TabIndex = 11;
             // 
-            // textBox4
+            // txtbx_stock
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(1242, 394);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(396, 53);
-            this.textBox4.TabIndex = 10;
+            this.txtbx_stock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbx_stock.Location = new System.Drawing.Point(1242, 394);
+            this.txtbx_stock.Name = "txtbx_stock";
+            this.txtbx_stock.Size = new System.Drawing.Size(396, 53);
+            this.txtbx_stock.TabIndex = 10;
             // 
-            // textBox6
+            // txtbx_name
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(1242, 652);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(396, 53);
-            this.textBox6.TabIndex = 12;
+            this.txtbx_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbx_name.Location = new System.Drawing.Point(1242, 652);
+            this.txtbx_name.Name = "txtbx_name";
+            this.txtbx_name.Size = new System.Drawing.Size(396, 53);
+            this.txtbx_name.TabIndex = 12;
             // 
             // lbl_color
             // 
@@ -198,76 +193,43 @@
             this.lbl_edit.TabIndex = 17;
             this.lbl_edit.Text = "Edit Items";
             // 
-            // dataGridView1
+            // lstbx_items
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Size,
-            this.Stock,
-            this.Color,
-            this.Name});
-            this.dataGridView1.Location = new System.Drawing.Point(81, 484);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 40;
-            this.dataGridView1.Size = new System.Drawing.Size(768, 319);
-            this.dataGridView1.TabIndex = 18;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Width = 50;
-            // 
-            // Size
-            // 
-            this.Size.HeaderText = "Size";
-            this.Size.Name = "Size";
-            this.Size.Width = 75;
-            // 
-            // Stock
-            // 
-            this.Stock.HeaderText = "Stock";
-            this.Stock.Name = "Stock";
-            // 
-            // Color
-            // 
-            this.Color.HeaderText = "Color";
-            this.Color.Name = "Color";
-            this.Color.Width = 200;
-            // 
-            // Name
-            // 
-            this.Name.HeaderText = "Name";
-            this.Name.Name = "Name";
-            this.Name.Width = 300;
+            this.lstbx_items.FormattingEnabled = true;
+            this.lstbx_items.ItemHeight = 31;
+            this.lstbx_items.Location = new System.Drawing.Point(90, 523);
+            this.lstbx_items.Name = "lstbx_items";
+            this.lstbx_items.Size = new System.Drawing.Size(885, 314);
+            this.lstbx_items.TabIndex = 18;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1738, 962);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lstbx_items);
             this.Controls.Add(this.lbl_edit);
             this.Controls.Add(this.lbl_name);
             this.Controls.Add(this.lbl_stock);
             this.Controls.Add(this.lbl_size);
             this.Controls.Add(this.lbl_color);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtbx_name);
+            this.Controls.Add(this.txtbx_color);
+            this.Controls.Add(this.txtbx_stock);
+            this.Controls.Add(this.txtbx_size);
             this.Controls.Add(this.cmbbox_search);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.lbl_ineventoryName);
             this.Controls.Add(this.lbl_search);
+            this.MinimumSize = new System.Drawing.Size(1770, 1050);
             this.Name = "Form1";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,23 +241,18 @@
         private System.Windows.Forms.Label lbl_search;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btn_edit;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.ComboBox cmbbox_search;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtbx_size;
+        private System.Windows.Forms.TextBox txtbx_color;
+        private System.Windows.Forms.TextBox txtbx_stock;
+        private System.Windows.Forms.TextBox txtbx_name;
         private System.Windows.Forms.Label lbl_color;
         private System.Windows.Forms.Label lbl_size;
         private System.Windows.Forms.Label lbl_stock;
         private System.Windows.Forms.Label lbl_name;
         private System.Windows.Forms.Label lbl_edit;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Size;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Color;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.ListBox lstbx_items;
     }
 }
 
