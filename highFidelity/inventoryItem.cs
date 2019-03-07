@@ -34,11 +34,5 @@ namespace highFidelity
             return newString;
         }
 
-        public string getSize()
-        {
-            string newSize = this.size;
-            return newSize;
-        }
-
     }
 }

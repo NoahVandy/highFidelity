@@ -11,13 +11,20 @@ namespace highFidelity
 {
     class itemList
     {
-        private ArrayList theList { get; set; }
+        private List<inventoryItem> theList { get; set; }
 
 
 
         public itemList()
         {
-            this.theList = new ArrayList();
+            this.theList = new List<inventoryItem>();
+        }
+
+        override
+        public string ToString()
+        {
+            string newString = this.theList.ToString();
+            return newString;
         }
     }
 }

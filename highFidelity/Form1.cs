@@ -44,6 +44,8 @@ namespace highFidelity
             {
 
             }
+
+
             txtbx_size.Text = "";
             txtbx_stock.Text = "";
             txtbx_color.Text = "";
@@ -61,6 +63,14 @@ namespace highFidelity
             txtbx_stock.Text = itemList[i].stock;
             txtbx_color.Text = itemList[i].color;
             txtbx_model.Text = itemList[i].model;
+
+            //after I get the values i need to set them to what are in the text boxes
+
+            itemList[i].size = txtbx_size.Text;
+            itemList[i].stock = txtbx_stock.Text;
+            itemList[i].color = txtbx_color.Text;
+            itemList[i].model = txtbx_size.Text;
+
         }
     }
 }
