@@ -37,11 +37,11 @@
             this.txtbx_size = new System.Windows.Forms.TextBox();
             this.txtbx_color = new System.Windows.Forms.TextBox();
             this.txtbx_stock = new System.Windows.Forms.TextBox();
-            this.txtbx_name = new System.Windows.Forms.TextBox();
+            this.txtbx_model = new System.Windows.Forms.TextBox();
             this.lbl_color = new System.Windows.Forms.Label();
             this.lbl_size = new System.Windows.Forms.Label();
             this.lbl_stock = new System.Windows.Forms.Label();
-            this.lbl_name = new System.Windows.Forms.Label();
+            this.lbl_model = new System.Windows.Forms.Label();
             this.lbl_edit = new System.Windows.Forms.Label();
             this.lstbx_items = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
@@ -87,6 +87,7 @@
             this.btn_edit.TabIndex = 4;
             this.btn_edit.Text = "Edit";
             this.btn_edit.UseVisualStyleBackColor = false;
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
             // btn_delete
             // 
@@ -131,13 +132,13 @@
             this.txtbx_stock.Size = new System.Drawing.Size(396, 53);
             this.txtbx_stock.TabIndex = 10;
             // 
-            // txtbx_name
+            // txtbx_model
             // 
-            this.txtbx_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbx_name.Location = new System.Drawing.Point(1242, 652);
-            this.txtbx_name.Name = "txtbx_name";
-            this.txtbx_name.Size = new System.Drawing.Size(396, 53);
-            this.txtbx_name.TabIndex = 12;
+            this.txtbx_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbx_model.Location = new System.Drawing.Point(1242, 652);
+            this.txtbx_model.Name = "txtbx_model";
+            this.txtbx_model.Size = new System.Drawing.Size(396, 53);
+            this.txtbx_model.TabIndex = 12;
             // 
             // lbl_color
             // 
@@ -172,16 +173,16 @@
             this.lbl_stock.TabIndex = 15;
             this.lbl_stock.Text = "Stock:";
             // 
-            // lbl_name
+            // lbl_model
             // 
-            this.lbl_name.AutoSize = true;
-            this.lbl_name.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_name.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_name.Location = new System.Drawing.Point(1093, 642);
-            this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(151, 91);
-            this.lbl_name.TabIndex = 16;
-            this.lbl_name.Text = "Name:";
+            this.lbl_model.AutoSize = true;
+            this.lbl_model.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_model.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_model.Location = new System.Drawing.Point(1093, 642);
+            this.lbl_model.Name = "lbl_model";
+            this.lbl_model.Size = new System.Drawing.Size(159, 91);
+            this.lbl_model.TabIndex = 16;
+            this.lbl_model.Text = "Model:";
             // 
             // lbl_edit
             // 
@@ -209,16 +210,16 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1738, 962);
+            this.Controls.Add(this.txtbx_size);
+            this.Controls.Add(this.txtbx_stock);
+            this.Controls.Add(this.txtbx_color);
+            this.Controls.Add(this.txtbx_model);
             this.Controls.Add(this.lstbx_items);
             this.Controls.Add(this.lbl_edit);
-            this.Controls.Add(this.lbl_name);
+            this.Controls.Add(this.lbl_model);
             this.Controls.Add(this.lbl_stock);
             this.Controls.Add(this.lbl_size);
             this.Controls.Add(this.lbl_color);
-            this.Controls.Add(this.txtbx_name);
-            this.Controls.Add(this.txtbx_color);
-            this.Controls.Add(this.txtbx_stock);
-            this.Controls.Add(this.txtbx_size);
             this.Controls.Add(this.cmbbox_search);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_edit);
@@ -246,11 +247,11 @@
         private System.Windows.Forms.TextBox txtbx_size;
         private System.Windows.Forms.TextBox txtbx_color;
         private System.Windows.Forms.TextBox txtbx_stock;
-        private System.Windows.Forms.TextBox txtbx_name;
+        private System.Windows.Forms.TextBox txtbx_model;
         private System.Windows.Forms.Label lbl_color;
         private System.Windows.Forms.Label lbl_size;
         private System.Windows.Forms.Label lbl_stock;
-        private System.Windows.Forms.Label lbl_name;
+        private System.Windows.Forms.Label lbl_model;
         private System.Windows.Forms.Label lbl_edit;
         private System.Windows.Forms.ListBox lstbx_items;
     }

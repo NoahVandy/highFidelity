@@ -1,4 +1,7 @@
-﻿using System;
+﻿//this is my own work
+//Noah Vandervelden
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,10 +30,10 @@ namespace highFidelity
                 string id = idCounter.ToString();
                 string size = txtbx_size.Text;
                 string stock = txtbx_stock.Text;
-                string color = txtbx_stock.Text;
-                string name = txtbx_name.Text;
+                string color = txtbx_color.Text;
+                string model = txtbx_model.Text;
 
-                inventoryItem item = new inventoryItem(id, size, stock, color, name);
+                inventoryItem item = new inventoryItem(id, size, stock, color, model);
 
                 lstbx_items.Items.Add(item.ToString() + "\n");
                 idCounter++;
@@ -39,6 +42,16 @@ namespace highFidelity
             {
 
             }
+            txtbx_size.Text = "";
+            txtbx_stock.Text = "";
+            txtbx_color.Text = "";
+            txtbx_model.Text = "";
+
+        }
+
+        private void btn_edit_Click(object sender, EventArgs e)
+        {
+            //lstbx_items.GetSelected();
         }
     }
 }

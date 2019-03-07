@@ -1,4 +1,6 @@
-﻿using System;
+﻿//This is my own work
+//Noah Vandervelden
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,27 +14,23 @@ namespace highFidelity
         private string size { get; set; }
         private string stock { get; set; }
         private string color { get; set; }
-        private string name { get; set; }
+        private string model { get; set; }
 
-        public inventoryItem(string id, string size, string stock, string color, string name)
+        //constructor
+        public inventoryItem(string id, string size, string stock, string color, string model)
         {
             this.id = id;
             this.size = size;
             this.stock = stock;
             this.color = color;
-            this.name = name;
+            this.model = model;
         }
-
-        
-
 
 
         override
         public string ToString()
         {
-            string newString = "id: " + this.id + " size: " + this.size + " stock: " + this.stock + " color: " + this.color + " name: " + this.name;
-
-
+            string newString = "id: " + this.id + " size: " + this.size + " stock: " + this.stock + " color: " + this.color + " model: " + this.model;
             return newString;
         }
 
