@@ -10,11 +10,11 @@ namespace highFidelity
 {
     class inventoryItem
     {
-        private string id { get; set; }
-        private string size { get; set; }
-        private string stock { get; set; }
-        private string color { get; set; }
-        private string model { get; set; }
+        public string id { get; set; }
+        public string size { get; set; }
+        public string stock { get; set; }
+        public string color { get; set; }
+        public string model { get; set; }
 
         //constructor
         public inventoryItem(string id, string size, string stock, string color, string model)
@@ -32,6 +32,12 @@ namespace highFidelity
         {
             string newString = "id: " + this.id + " size: " + this.size + " stock: " + this.stock + " color: " + this.color + " model: " + this.model;
             return newString;
+        }
+
+        public string getSize()
+        {
+            string newSize = this.size;
+            return newSize;
         }
 
     }

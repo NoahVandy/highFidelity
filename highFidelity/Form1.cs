@@ -16,6 +16,7 @@ namespace highFidelity
     public partial class Form1 : Form
     {
         int idCounter = 0;
+        List<inventoryItem> itemList = new List<inventoryItem>();
 
         public Form1()
         {
@@ -34,9 +35,10 @@ namespace highFidelity
                 string model = txtbx_model.Text;
 
                 inventoryItem item = new inventoryItem(id, size, stock, color, model);
-
-                lstbx_items.Items.Add(item.ToString() + "\n");
+                itemList.Add(item);
+                lstbx_items.Items.Add(item.ToString());
                 idCounter++;
+
             }
             catch
             {
@@ -51,7 +53,14 @@ namespace highFidelity
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
-            //lstbx_items.GetSelected();
+            lstbx_items.GetSelected(lstbx_items.SelectedIndex);
+
+            int i = lstbx_items.SelectedIndex;
+
+            txtbx_size.Text = itemList[i].size;
+            txtbx_stock.Text = itemList[i].stock;
+            txtbx_color.Text = itemList[i].color;
+            txtbx_model.Text = itemList[i].model;
         }
     }
 }
