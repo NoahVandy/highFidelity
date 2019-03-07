@@ -20,6 +20,11 @@ namespace highFidelity
             this.theList = new List<inventoryItem>();
         }
 
+        public void Add(inventoryItem item)
+        {
+            this.theList.Add(item);
+        }
+
         override
         public string ToString()
         {
