@@ -33,6 +33,12 @@ namespace highFidelity
             string newString = "id: " + this.id + " size: " + this.size + " stock: " + this.stock + " color: " + this.color + " model: " + this.model;
             return newString;
         }
+
+        public string getID()
+        {
+            string newID = this.id;
+            return newID;
+        }
            
         public string getSize()
         {

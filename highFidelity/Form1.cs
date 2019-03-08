@@ -17,10 +17,12 @@ namespace highFidelity
     {
         int idCounter = 0;
         List<inventoryItem> itemList = new List<inventoryItem>();
+        
 
         public Form1()
         {
             InitializeComponent();
+            btn_update.Enabled = false;
             
         }
 
@@ -44,6 +46,7 @@ namespace highFidelity
                 lstbx_items.Items.Add(itemList[idCounter].ToString());
                 //making the id auto incriment
                 idCounter++;
+                
 
             }
             catch
@@ -77,6 +80,8 @@ namespace highFidelity
             itemList[i].setStock(txtbx_stock.Text);
             itemList[i].setColor(txtbx_color.Text);
             itemList[i].setModel(txtbx_model.Text);
+            btn_update.Enabled = true;
+            btn_add.Enabled = false;
         }
 
         private void btn_update_Click(object sender, EventArgs e)
@@ -89,9 +94,10 @@ namespace highFidelity
             itemList[lstbx_items.SelectedIndex].setColor(txtbx_color.Text);
             itemList[lstbx_items.SelectedIndex].setModel(txtbx_model.Text);
 
+            //clearing the list box so that the old stuff doesn't stay in there
             lstbx_items.Items.Clear();
 
-
+            //making the list box again with the array list so that the updated array list is displayed
             for(int i = 0; i < itemList.Count; i++)
             {
                 lstbx_items.Items.Add(itemList[i]);
@@ -102,6 +108,24 @@ namespace highFidelity
             txtbx_stock.Text = "";
             txtbx_color.Text = "";
             txtbx_model.Text = "";
+            btn_add.Enabled = true;
+            btn_update.Enabled = false;
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            itemList.RemoveAt(lstbx_items.SelectedIndex);
+
+            lstbx_items.Items.Clear();
+
+            for (int i = 0; i < itemList.Count; i++)
+            {
+                lstbx_items.Items.Add(itemList[i]);
+            }
+
+            //this was my attempt at having the id increment at the next id after one was deleted
+            //idCounter = (int.Parse(itemList[itemList.Count - 1].getID()) + 1);
+
         }
     }
 }
