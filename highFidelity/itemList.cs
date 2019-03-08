@@ -11,7 +11,7 @@ namespace highFidelity
 {
     class itemList
     {
-        private List<inventoryItem> theList { get; set; }
+        public List<inventoryItem> theList { get; set; }
 
 
 

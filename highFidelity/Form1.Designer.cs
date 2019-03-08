@@ -44,6 +44,7 @@
             this.lbl_model = new System.Windows.Forms.Label();
             this.lbl_edit = new System.Windows.Forms.Label();
             this.lstbx_items = new System.Windows.Forms.ListBox();
+            this.btn_update = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_ineventoryName
@@ -70,7 +71,7 @@
             // btn_add
             // 
             this.btn_add.BackColor = System.Drawing.Color.White;
-            this.btn_add.Location = new System.Drawing.Point(1349, 785);
+            this.btn_add.Location = new System.Drawing.Point(1242, 796);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(183, 93);
             this.btn_add.TabIndex = 3;
@@ -203,6 +204,17 @@
             this.lstbx_items.Size = new System.Drawing.Size(885, 314);
             this.lstbx_items.TabIndex = 18;
             // 
+            // btn_update
+            // 
+            this.btn_update.BackColor = System.Drawing.Color.White;
+            this.btn_update.Location = new System.Drawing.Point(1455, 796);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(183, 93);
+            this.btn_update.TabIndex = 19;
+            this.btn_update.Text = "Update";
+            this.btn_update.UseVisualStyleBackColor = false;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -210,6 +222,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1738, 962);
+            this.Controls.Add(this.btn_update);
             this.Controls.Add(this.txtbx_size);
             this.Controls.Add(this.txtbx_stock);
             this.Controls.Add(this.txtbx_color);
@@ -226,6 +239,8 @@
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.lbl_ineventoryName);
             this.Controls.Add(this.lbl_search);
+            this.MaximumSize = new System.Drawing.Size(1770, 1050);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1770, 1050);
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
@@ -254,6 +269,7 @@
         private System.Windows.Forms.Label lbl_model;
         private System.Windows.Forms.Label lbl_edit;
         private System.Windows.Forms.ListBox lstbx_items;
+        private System.Windows.Forms.Button btn_update;
     }
 }
 

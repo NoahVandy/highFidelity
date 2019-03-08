@@ -38,10 +38,10 @@ namespace highFidelity
 
                 //actually making the item using the parameters that were created fromt the boxes
                 inventoryItem item = new inventoryItem(id, size, stock, color, model);
-                //addin it to the List
+                //adding it to the List
                 itemList.Add(item);
                 //adding it to list box
-                lstbx_items.Items.Add(item.ToString());
+                lstbx_items.Items.Add(itemList[idCounter].ToString());
                 //making the id auto incriment
                 idCounter++;
 
@@ -61,24 +61,41 @@ namespace highFidelity
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
-            //getting the index of the selected item from the list box
-            lstbx_items.GetSelected(lstbx_items.SelectedIndex);
-            //assigning the index of the list box to i
+            //assigning the index of the list box to i 
             int i = lstbx_items.SelectedIndex;
             //using i as the index of the List and setting the text boxes to what the values are
             //from the selected index in the array
-            txtbx_size.Text = itemList[i].size;
-            txtbx_stock.Text = itemList[i].stock;
-            txtbx_color.Text = itemList[i].color;
-            txtbx_model.Text = itemList[i].model;
+
+            txtbx_size.Text = itemList[i].getSize();
+            txtbx_stock.Text = itemList[i].getStock();
+            txtbx_color.Text = itemList[i].getColor();
+            txtbx_model.Text = itemList[i].getModel();
 
             //after I get the values i need to set them to what are in the text boxes
 
-            itemList[i].size = txtbx_size.Text;
-            itemList[i].stock = txtbx_stock.Text;
-            itemList[i].color = txtbx_color.Text;
-            itemList[i].model = txtbx_size.Text;
+            itemList[i].setSize(txtbx_size.Text);
+            itemList[i].setStock(txtbx_stock.Text);
+            itemList[i].setColor(txtbx_color.Text);
+            itemList[i].setModel(txtbx_model.Text);
+        }
 
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            
+
+
+            itemList[lstbx_items.SelectedIndex].setSize(txtbx_size.Text);
+            itemList[lstbx_items.SelectedIndex].setStock(txtbx_stock.Text);
+            itemList[lstbx_items.SelectedIndex].setColor(txtbx_color.Text);
+            itemList[lstbx_items.SelectedIndex].setModel(txtbx_model.Text);
+
+            lstbx_items.Items.Clear();
+
+
+            for(int i = 0; i < itemList.Count; i++)
+            {
+                lstbx_items.Items.Add(itemList[i]);
+            }
         }
     }
 }
