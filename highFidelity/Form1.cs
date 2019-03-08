@@ -96,6 +96,12 @@ namespace highFidelity
             {
                 lstbx_items.Items.Add(itemList[i]);
             }
+
+            //resetting the text boxes back to blank
+            txtbx_size.Text = "";
+            txtbx_stock.Text = "";
+            txtbx_color.Text = "";
+            txtbx_model.Text = "";
         }
     }
 }
