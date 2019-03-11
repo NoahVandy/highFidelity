@@ -204,6 +204,7 @@
             this.lstbx_items.Name = "lstbx_items";
             this.lstbx_items.Size = new System.Drawing.Size(885, 314);
             this.lstbx_items.TabIndex = 18;
+            this.lstbx_items.SelectedIndexChanged += new System.EventHandler(this.lstbx_items_SelectedIndexChanged);
             // 
             // btn_update
             // 

@@ -23,6 +23,7 @@ namespace highFidelity
         {
             InitializeComponent();
             btn_update.Enabled = false;
+            btn_edit.Enabled = false;
             
         }
 
@@ -110,6 +111,7 @@ namespace highFidelity
             txtbx_model.Text = "";
             btn_add.Enabled = true;
             btn_update.Enabled = false;
+            btn_edit.Enabled = false;
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
@@ -126,6 +128,11 @@ namespace highFidelity
             //this was my attempt at having the id increment at the next id after one was deleted
             //idCounter = (int.Parse(itemList[itemList.Count - 1].getID()) + 1);
 
+        }
+
+        private void lstbx_items_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btn_edit.Enabled = true;
         }
     }
 }
