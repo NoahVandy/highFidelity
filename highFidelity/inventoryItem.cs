@@ -15,10 +15,10 @@ namespace highFidelity
         public int stock;
         public string color;
         public string model;
-        public int cost;
+        public string cost;
 
         //constructor
-        public inventoryItem(string id, string size, int stock, string color, string model, int cost)
+        public inventoryItem(string id, string size, int stock, string color, string model, string cost)
         {
             this.id = id;
             this.size = size;
@@ -81,10 +81,10 @@ namespace highFidelity
             this.model = newString;
         }
 
-        public int getCost()
+        public string getCost()
         {
-            int newInt = this.cost;
-            return newInt;
+            string newString = this.cost;
+            return newString;
         }
 
 

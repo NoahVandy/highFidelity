@@ -101,7 +101,7 @@
             this.btn_delete.TabIndex = 5;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = false;
-            //this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // cmbbox_search
             // 
@@ -199,7 +199,7 @@
             this.lstbx_items.Name = "lstbx_items";
             this.lstbx_items.Size = new System.Drawing.Size(775, 294);
             this.lstbx_items.TabIndex = 18;
-            //this.lstbx_items.SelectedIndexChanged += new System.EventHandler(this.lstbx_items_SelectedIndexChanged);
+            this.lstbx_items.SelectedIndexChanged += new System.EventHandler(this.lstbx_items_SelectedIndexChanged);
             // 
             // btn_update
             // 
@@ -210,7 +210,7 @@
             this.btn_update.TabIndex = 19;
             this.btn_update.Text = "Update";
             this.btn_update.UseVisualStyleBackColor = false;
-            //this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // txtbx_model
             // 
@@ -226,14 +226,14 @@
             this.txtbx_cost.Location = new System.Drawing.Point(1086, 626);
             this.txtbx_cost.Name = "txtbx_cost";
             this.txtbx_cost.Size = new System.Drawing.Size(347, 48);
-            this.txtbx_cost.TabIndex = 20;
+            this.txtbx_cost.TabIndex = 13;
             // 
             // lbl_cost
             // 
             this.lbl_cost.AutoSize = true;
             this.lbl_cost.BackColor = System.Drawing.Color.Transparent;
             this.lbl_cost.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_cost.Location = new System.Drawing.Point(942, 617);
+            this.lbl_cost.Location = new System.Drawing.Point(965, 617);
             this.lbl_cost.Name = "lbl_cost";
             this.lbl_cost.Size = new System.Drawing.Size(115, 82);
             this.lbl_cost.TabIndex = 21;
@@ -246,7 +246,6 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1524, 908);
-            this.Controls.Add(this.lbl_cost);
             this.Controls.Add(this.txtbx_cost);
             this.Controls.Add(this.txtbx_model);
             this.Controls.Add(this.btn_update);
@@ -265,6 +264,7 @@
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.lbl_ineventoryName);
             this.Controls.Add(this.lbl_search);
+            this.Controls.Add(this.lbl_cost);
             this.MaximumSize = new System.Drawing.Size(1552, 987);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1552, 987);

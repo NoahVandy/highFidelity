@@ -64,10 +64,12 @@ namespace highFidelity
 
         //}
 
-        //public Array[] getAllItems()
-        //{
+        public inventoryItem[] getAllItems()
+        {
+            inventoryItem[] mirror = theList.ToArray();
 
-        //}
+            return mirror;
+        }
 
         //override
         //public string ToString()
