@@ -42,11 +42,15 @@
             this.lbl_stock = new System.Windows.Forms.Label();
             this.lbl_model = new System.Windows.Forms.Label();
             this.lbl_edit = new System.Windows.Forms.Label();
-            this.lstbx_items = new System.Windows.Forms.ListBox();
             this.btn_update = new System.Windows.Forms.Button();
             this.txtbx_model = new System.Windows.Forms.TextBox();
             this.txtbx_cost = new System.Windows.Forms.TextBox();
             this.lbl_cost = new System.Windows.Forms.Label();
+            this.dgv_items = new System.Windows.Forms.DataGridView();
+            this.btn_showItems = new System.Windows.Forms.Button();
+            this.txtbx_id = new System.Windows.Forms.TextBox();
+            this.lbl_id = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_items)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_ineventoryName
@@ -73,7 +77,7 @@
             // btn_add
             // 
             this.btn_add.BackColor = System.Drawing.Color.White;
-            this.btn_add.Location = new System.Drawing.Point(1087, 745);
+            this.btn_add.Location = new System.Drawing.Point(1087, 798);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(160, 87);
             this.btn_add.TabIndex = 3;
@@ -105,7 +109,6 @@
             // 
             // cmbbox_search
             // 
-            this.cmbbox_search.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbbox_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbbox_search.FormattingEnabled = true;
             this.cmbbox_search.Location = new System.Drawing.Point(199, 174);
@@ -116,7 +119,7 @@
             // txtbx_size
             // 
             this.txtbx_size.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbx_size.Location = new System.Drawing.Point(1087, 147);
+            this.txtbx_size.Location = new System.Drawing.Point(1086, 242);
             this.txtbx_size.Name = "txtbx_size";
             this.txtbx_size.Size = new System.Drawing.Size(347, 48);
             this.txtbx_size.TabIndex = 9;
@@ -124,7 +127,7 @@
             // txtbx_color
             // 
             this.txtbx_color.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbx_color.Location = new System.Drawing.Point(1087, 388);
+            this.txtbx_color.Location = new System.Drawing.Point(1086, 466);
             this.txtbx_color.Name = "txtbx_color";
             this.txtbx_color.Size = new System.Drawing.Size(347, 48);
             this.txtbx_color.TabIndex = 11;
@@ -132,7 +135,7 @@
             // txtbx_stock
             // 
             this.txtbx_stock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbx_stock.Location = new System.Drawing.Point(1087, 268);
+            this.txtbx_stock.Location = new System.Drawing.Point(1086, 354);
             this.txtbx_stock.Name = "txtbx_stock";
             this.txtbx_stock.Size = new System.Drawing.Size(347, 48);
             this.txtbx_stock.TabIndex = 10;
@@ -142,7 +145,7 @@
             this.lbl_color.AutoSize = true;
             this.lbl_color.BackColor = System.Drawing.Color.Transparent;
             this.lbl_color.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_color.Location = new System.Drawing.Point(956, 379);
+            this.lbl_color.Location = new System.Drawing.Point(955, 457);
             this.lbl_color.Name = "lbl_color";
             this.lbl_color.Size = new System.Drawing.Size(129, 82);
             this.lbl_color.TabIndex = 13;
@@ -153,7 +156,7 @@
             this.lbl_size.AutoSize = true;
             this.lbl_size.BackColor = System.Drawing.Color.Transparent;
             this.lbl_size.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_size.Location = new System.Drawing.Point(976, 138);
+            this.lbl_size.Location = new System.Drawing.Point(975, 233);
             this.lbl_size.Name = "lbl_size";
             this.lbl_size.Size = new System.Drawing.Size(109, 82);
             this.lbl_size.TabIndex = 14;
@@ -164,7 +167,7 @@
             this.lbl_stock.AutoSize = true;
             this.lbl_stock.BackColor = System.Drawing.Color.Transparent;
             this.lbl_stock.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_stock.Location = new System.Drawing.Point(954, 258);
+            this.lbl_stock.Location = new System.Drawing.Point(953, 345);
             this.lbl_stock.Name = "lbl_stock";
             this.lbl_stock.Size = new System.Drawing.Size(133, 82);
             this.lbl_stock.TabIndex = 15;
@@ -175,7 +178,7 @@
             this.lbl_model.AutoSize = true;
             this.lbl_model.BackColor = System.Drawing.Color.Transparent;
             this.lbl_model.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_model.Location = new System.Drawing.Point(954, 500);
+            this.lbl_model.Location = new System.Drawing.Point(953, 569);
             this.lbl_model.Name = "lbl_model";
             this.lbl_model.Size = new System.Drawing.Size(143, 82);
             this.lbl_model.TabIndex = 16;
@@ -185,26 +188,16 @@
             // 
             this.lbl_edit.AutoSize = true;
             this.lbl_edit.Font = new System.Drawing.Font("Javanese Text", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_edit.Location = new System.Drawing.Point(1087, 51);
+            this.lbl_edit.Location = new System.Drawing.Point(1081, 19);
             this.lbl_edit.Name = "lbl_edit";
             this.lbl_edit.Size = new System.Drawing.Size(248, 102);
             this.lbl_edit.TabIndex = 17;
             this.lbl_edit.Text = "Edit Items";
             // 
-            // lstbx_items
-            // 
-            this.lstbx_items.FormattingEnabled = true;
-            this.lstbx_items.ItemHeight = 29;
-            this.lstbx_items.Location = new System.Drawing.Point(79, 489);
-            this.lstbx_items.Name = "lstbx_items";
-            this.lstbx_items.Size = new System.Drawing.Size(775, 294);
-            this.lstbx_items.TabIndex = 18;
-            this.lstbx_items.SelectedIndexChanged += new System.EventHandler(this.lstbx_items_SelectedIndexChanged);
-            // 
             // btn_update
             // 
             this.btn_update.BackColor = System.Drawing.Color.White;
-            this.btn_update.Location = new System.Drawing.Point(1273, 745);
+            this.btn_update.Location = new System.Drawing.Point(1273, 798);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(160, 87);
             this.btn_update.TabIndex = 19;
@@ -215,7 +208,7 @@
             // txtbx_model
             // 
             this.txtbx_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbx_model.Location = new System.Drawing.Point(1087, 509);
+            this.txtbx_model.Location = new System.Drawing.Point(1086, 578);
             this.txtbx_model.Name = "txtbx_model";
             this.txtbx_model.Size = new System.Drawing.Size(347, 48);
             this.txtbx_model.TabIndex = 12;
@@ -223,7 +216,7 @@
             // txtbx_cost
             // 
             this.txtbx_cost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbx_cost.Location = new System.Drawing.Point(1086, 626);
+            this.txtbx_cost.Location = new System.Drawing.Point(1085, 690);
             this.txtbx_cost.Name = "txtbx_cost";
             this.txtbx_cost.Size = new System.Drawing.Size(347, 48);
             this.txtbx_cost.TabIndex = 13;
@@ -233,11 +226,49 @@
             this.lbl_cost.AutoSize = true;
             this.lbl_cost.BackColor = System.Drawing.Color.Transparent;
             this.lbl_cost.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_cost.Location = new System.Drawing.Point(965, 617);
+            this.lbl_cost.Location = new System.Drawing.Point(964, 681);
             this.lbl_cost.Name = "lbl_cost";
             this.lbl_cost.Size = new System.Drawing.Size(115, 82);
             this.lbl_cost.TabIndex = 21;
             this.lbl_cost.Text = "Cost:";
+            // 
+            // dgv_items
+            // 
+            this.dgv_items.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_items.Location = new System.Drawing.Point(199, 500);
+            this.dgv_items.Name = "dgv_items";
+            this.dgv_items.RowTemplate.Height = 37;
+            this.dgv_items.Size = new System.Drawing.Size(534, 230);
+            this.dgv_items.TabIndex = 22;
+            // 
+            // btn_showItems
+            // 
+            this.btn_showItems.Location = new System.Drawing.Point(339, 814);
+            this.btn_showItems.Name = "btn_showItems";
+            this.btn_showItems.Size = new System.Drawing.Size(273, 82);
+            this.btn_showItems.TabIndex = 23;
+            this.btn_showItems.Text = "Refresh";
+            this.btn_showItems.UseVisualStyleBackColor = true;
+            this.btn_showItems.Click += new System.EventHandler(this.btn_showItems_Click);
+            // 
+            // txtbx_id
+            // 
+            this.txtbx_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbx_id.Location = new System.Drawing.Point(1088, 130);
+            this.txtbx_id.Name = "txtbx_id";
+            this.txtbx_id.Size = new System.Drawing.Size(347, 48);
+            this.txtbx_id.TabIndex = 8;
+            // 
+            // lbl_id
+            // 
+            this.lbl_id.AutoSize = true;
+            this.lbl_id.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_id.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_id.Location = new System.Drawing.Point(990, 121);
+            this.lbl_id.Name = "lbl_id";
+            this.lbl_id.Size = new System.Drawing.Size(85, 82);
+            this.lbl_id.TabIndex = 25;
+            this.lbl_id.Text = "ID:";
             // 
             // Form1
             // 
@@ -246,19 +277,22 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1524, 908);
+            this.Controls.Add(this.txtbx_id);
+            this.Controls.Add(this.lbl_id);
+            this.Controls.Add(this.btn_showItems);
+            this.Controls.Add(this.dgv_items);
+            this.Controls.Add(this.cmbbox_search);
             this.Controls.Add(this.txtbx_cost);
             this.Controls.Add(this.txtbx_model);
             this.Controls.Add(this.btn_update);
             this.Controls.Add(this.txtbx_size);
             this.Controls.Add(this.txtbx_stock);
             this.Controls.Add(this.txtbx_color);
-            this.Controls.Add(this.lstbx_items);
             this.Controls.Add(this.lbl_edit);
             this.Controls.Add(this.lbl_model);
             this.Controls.Add(this.lbl_stock);
             this.Controls.Add(this.lbl_size);
             this.Controls.Add(this.lbl_color);
-            this.Controls.Add(this.cmbbox_search);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.btn_add);
@@ -272,6 +306,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_items)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,11 +328,14 @@
         private System.Windows.Forms.Label lbl_stock;
         private System.Windows.Forms.Label lbl_model;
         private System.Windows.Forms.Label lbl_edit;
-        private System.Windows.Forms.ListBox lstbx_items;
         private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.TextBox txtbx_model;
         private System.Windows.Forms.TextBox txtbx_cost;
         private System.Windows.Forms.Label lbl_cost;
+        private System.Windows.Forms.DataGridView dgv_items;
+        private System.Windows.Forms.Button btn_showItems;
+        private System.Windows.Forms.TextBox txtbx_id;
+        private System.Windows.Forms.Label lbl_id;
     }
 }
 

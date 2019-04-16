@@ -11,53 +11,90 @@ namespace highFidelity
 {
     class inventoryManager
     {
-        //constructor
-        public List<inventoryItem> theList { get; set; }
+        private List<inventoryItem> theList;
 
 
 
         public inventoryManager()
         {
-            this.theList = new List<inventoryItem>();
+            theList = new List<inventoryItem>();
         }
 
-        public void Add(inventoryItem item)
+        public bool Add(inventoryItem item)
         {
-            this.theList.Add(item);
+            if (theList.Contains(item))
+            {
+                return false;
+            }
+            else
+            {
+                this.theList.Add(item);
+                return true;
+            }
+
         }
+
 
         public bool removeItem(inventoryItem item)
         {
-            return false;
+            if (theList.Contains(item))
+            {
+                theList.Remove(item);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        public bool restock(int restock, inventoryItem item)
+        public void restock(inventoryItem item, int restock)
         {
-            return false;
+            item.stock = restock;
+
         }
 
         //public void displayAll()
         //{
-        //    for(int i = 0; i < theList.Count; i++)
+        //    for (int i = 0; i < theList.Count; i++)
         //    {
-        //        theList[i]; 
+        //        theList[i];
         //    }
         //}
 
-        public inventoryItem findByID(string id)
+        public inventoryItem findByID(string search)
         {
             inventoryItem result = null;
 
-            for(int i =0; i < theList.Count(); i++)
+            for (int i = 0; i < theList.Count(); i++)
             {
                 //does this product have the same id as id?
-                if(theList[i].id == id)
+                if (theList[i].id.Equals(search))
                 {
                     result = theList[i];
+                    return result;
                 }
             }
+            return null;
+        }
+
+        public inventoryItem findByModel(string search)
+        {
+            inventoryItem result = null;
+            for (int i = 0; i < theList.Count(); i++)
+            {
+                if (theList[i].model.Equals(search))
+                {
+                    result = theList[i];
+                    return result;
+                }
+
+            }
+
+
             return result;
         }
+
 
         //public List<inventoryItem> findByPrice(double price)
         //{
@@ -71,12 +108,19 @@ namespace highFidelity
             return mirror;
         }
 
-        //override
-        //public string ToString()
-        //{
+        public List<inventoryItem> getItemList()
+        {
+            List<inventoryItem> mirror = new List<inventoryItem>();
 
-        //    string newString = "id: " + this.id + " size: " + this.size + " stock: " + this.stock + " color: " + this.color + " model: " + this.model + " cost: " + this.cost;
-        //    return newString;
-        //}
+            foreach(inventoryItem i in theList)
+            {
+                inventoryItem item = i;
+                mirror.Add(item);
+            }
+            return mirror;
+
+
+        }
+
     }
 }
