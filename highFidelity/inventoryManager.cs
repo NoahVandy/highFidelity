@@ -9,15 +9,23 @@ using System.Threading.Tasks;
 
 namespace highFidelity
 {
-    class inventoryManager
+    public class inventoryManager
     {
-        private List<inventoryItem> theList;
+        private List<inventoryItem> theList { get; set; }
 
 
 
         public inventoryManager()
         {
             theList = new List<inventoryItem>();
+
+            inventoryItem item1 = new inventoryItem("124e", "5", 70, "Blue", "Classics", 10.99);
+            theList.Add(item1);
+            inventoryItem item2 = new inventoryItem("124e", "6", 71, "Orange", "Classics", 15.99);
+            theList.Add(item2);
+            inventoryItem item3 = new inventoryItem("124e", "7", 99, "Red", "Lows", 49.99);
+            theList.Add(item3);
+
         }
 
         public bool Add(inventoryItem item)
@@ -33,6 +41,8 @@ namespace highFidelity
             }
 
         }
+
+        public int sizeOf() { return theList.Count; }
 
 
         public bool removeItem(inventoryItem item)
@@ -101,16 +111,10 @@ namespace highFidelity
 
         //}
 
-        public inventoryItem[] getAllItems()
-        {
-            inventoryItem[] mirror = theList.ToArray();
-
-            return mirror;
-        }
 
         public List<inventoryItem> getItemList()
         {
-            List<inventoryItem> mirror = new List<inventoryItem>();
+            List<inventoryItem> mirror = new List<inventoryItem>(); 
 
             foreach(inventoryItem i in theList)
             {

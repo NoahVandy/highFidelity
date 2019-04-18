@@ -15,7 +15,8 @@ namespace highFidelity
 {
     public partial class Form1 : Form
     {
-        inventoryManager itemList = new inventoryManager();
+        public static System.IO.StreamWriter sw;
+        public inventoryManager itemList = new inventoryManager();
 
 
         public Form1()
@@ -23,7 +24,8 @@ namespace highFidelity
             InitializeComponent();
             btn_update.Enabled = false;
             btn_edit.Enabled = false;
-
+            MessageBox.Show(itemList.sizeOf() + "");
+            
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -53,14 +55,6 @@ namespace highFidelity
                 {
                     MessageBox.Show("Error adding");
                 }
-                //adding it to datagridview
-                List<inventoryItem> mirror = itemList.getItemList();
-                dgv_items.DataSource = mirror;
-                //dgv_items.Update();
-                //dgv_items.Refresh();
-
-
-                //making the id auto incriment
 
 
                 
@@ -113,8 +107,6 @@ namespace highFidelity
             btn_update.Enabled = true;
             btn_add.Enabled = false;
         }
-
-
 
         private void btn_update_Click(object sender, EventArgs e)
         {
@@ -169,11 +161,15 @@ namespace highFidelity
 
         }
 
-        private void btn_showItems_Click(object sender, EventArgs e)
+        private void btn_refresh_Click(object sender, EventArgs e)
+
         {
             List<inventoryItem> mirror = itemList.getItemList();
+            //MessageBox.Show("in refresh" + mirror.Count);
+            this.dgv_items.DataSource = mirror;
 
-            dgv_items.DataSource = mirror;
+            
+
         }
     }
 }

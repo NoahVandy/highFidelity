@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace highFidelity
 {
-    class inventoryItem
+    public class inventoryItem
     {
         public string id;
         public string size;
@@ -31,7 +31,7 @@ namespace highFidelity
         override
         public string ToString()
         {
-            string newString = "id: " + this.id + " size: " + this.size + " stock: " + this.stock + " color: " + this.color + " model: " + this.model + " cost: " + this.cost;
+            string newString = this.id + "," + this.size + "," + this.stock + "," + this.color + "," + this.model + "," + this.cost;
             return newString;
         }
 

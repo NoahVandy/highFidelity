@@ -46,10 +46,10 @@
             this.txtbx_model = new System.Windows.Forms.TextBox();
             this.txtbx_cost = new System.Windows.Forms.TextBox();
             this.lbl_cost = new System.Windows.Forms.Label();
-            this.dgv_items = new System.Windows.Forms.DataGridView();
-            this.btn_showItems = new System.Windows.Forms.Button();
             this.txtbx_id = new System.Windows.Forms.TextBox();
             this.lbl_id = new System.Windows.Forms.Label();
+            this.dgv_items = new System.Windows.Forms.DataGridView();
+            this.btn_refresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_items)).BeginInit();
             this.SuspendLayout();
             // 
@@ -232,25 +232,6 @@
             this.lbl_cost.TabIndex = 21;
             this.lbl_cost.Text = "Cost:";
             // 
-            // dgv_items
-            // 
-            this.dgv_items.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_items.Location = new System.Drawing.Point(199, 500);
-            this.dgv_items.Name = "dgv_items";
-            this.dgv_items.RowTemplate.Height = 37;
-            this.dgv_items.Size = new System.Drawing.Size(534, 230);
-            this.dgv_items.TabIndex = 22;
-            // 
-            // btn_showItems
-            // 
-            this.btn_showItems.Location = new System.Drawing.Point(339, 814);
-            this.btn_showItems.Name = "btn_showItems";
-            this.btn_showItems.Size = new System.Drawing.Size(273, 82);
-            this.btn_showItems.TabIndex = 23;
-            this.btn_showItems.Text = "Refresh";
-            this.btn_showItems.UseVisualStyleBackColor = true;
-            this.btn_showItems.Click += new System.EventHandler(this.btn_showItems_Click);
-            // 
             // txtbx_id
             // 
             this.txtbx_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -270,6 +251,25 @@
             this.lbl_id.TabIndex = 25;
             this.lbl_id.Text = "ID:";
             // 
+            // dgv_items
+            // 
+            this.dgv_items.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_items.Location = new System.Drawing.Point(36, 457);
+            this.dgv_items.Name = "dgv_items";
+            this.dgv_items.RowTemplate.Height = 37;
+            this.dgv_items.Size = new System.Drawing.Size(839, 281);
+            this.dgv_items.TabIndex = 26;
+            // 
+            // btn_refresh
+            // 
+            this.btn_refresh.Location = new System.Drawing.Point(335, 755);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.Size = new System.Drawing.Size(221, 88);
+            this.btn_refresh.TabIndex = 27;
+            this.btn_refresh.Text = "Refresh";
+            this.btn_refresh.UseVisualStyleBackColor = true;
+            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -277,10 +277,10 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1524, 908);
+            this.Controls.Add(this.btn_refresh);
+            this.Controls.Add(this.dgv_items);
             this.Controls.Add(this.txtbx_id);
             this.Controls.Add(this.lbl_id);
-            this.Controls.Add(this.btn_showItems);
-            this.Controls.Add(this.dgv_items);
             this.Controls.Add(this.cmbbox_search);
             this.Controls.Add(this.txtbx_cost);
             this.Controls.Add(this.txtbx_model);
@@ -332,10 +332,10 @@
         private System.Windows.Forms.TextBox txtbx_model;
         private System.Windows.Forms.TextBox txtbx_cost;
         private System.Windows.Forms.Label lbl_cost;
-        private System.Windows.Forms.DataGridView dgv_items;
-        private System.Windows.Forms.Button btn_showItems;
         private System.Windows.Forms.TextBox txtbx_id;
         private System.Windows.Forms.Label lbl_id;
+        private System.Windows.Forms.DataGridView dgv_items;
+        private System.Windows.Forms.Button btn_refresh;
     }
 }
 
