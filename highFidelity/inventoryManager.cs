@@ -21,9 +21,9 @@ namespace highFidelity
 
             inventoryItem item1 = new inventoryItem("124e", "5", 70, "Blue", "Classics", 10.99);
             theList.Add(item1);
-            inventoryItem item2 = new inventoryItem("124e", "6", 71, "Orange", "Classics", 15.99);
+            inventoryItem item2 = new inventoryItem("125e", "6", 71, "Orange", "Classics", 15.99);
             theList.Add(item2);
-            inventoryItem item3 = new inventoryItem("124e", "7", 99, "Red", "Lows", 49.99);
+            inventoryItem item3 = new inventoryItem("126e", "7", 99, "Red", "Lows", 49.99);
             theList.Add(item3);
 
         }
