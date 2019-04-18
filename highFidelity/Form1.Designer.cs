@@ -259,6 +259,7 @@
             this.dgv_items.RowTemplate.Height = 37;
             this.dgv_items.Size = new System.Drawing.Size(839, 281);
             this.dgv_items.TabIndex = 26;
+            this.dgv_items.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_items_CellContentClick);
             // 
             // btn_refresh
             // 
@@ -334,8 +335,8 @@
         private System.Windows.Forms.Label lbl_cost;
         private System.Windows.Forms.TextBox txtbx_id;
         private System.Windows.Forms.Label lbl_id;
-        private System.Windows.Forms.DataGridView dgv_items;
         private System.Windows.Forms.Button btn_refresh;
+        private System.Windows.Forms.DataGridView dgv_items;
     }
 }
 

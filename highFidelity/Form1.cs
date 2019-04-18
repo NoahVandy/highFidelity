@@ -165,11 +165,15 @@ namespace highFidelity
 
         {
             List<inventoryItem> mirror = itemList.getItemList();
-            //MessageBox.Show("in refresh" + mirror.Count);
             this.dgv_items.DataSource = mirror;
 
             
 
+        }
+
+        private void dgv_items_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btn_edit.Enabled = true;
         }
     }
 }

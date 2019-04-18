@@ -30,6 +30,7 @@ namespace highFidelity
 
         public bool Add(inventoryItem item)
         {
+
             if (theList.Contains(item))
             {
                 return false;
@@ -105,16 +106,9 @@ namespace highFidelity
             return result;
         }
 
-
-        //public List<inventoryItem> findByPrice(double price)
-        //{
-
-        //}
-
-
         public List<inventoryItem> getItemList()
         {
-            List<inventoryItem> mirror = new List<inventoryItem>(); 
+            List<inventoryItem> mirror = new List<inventoryItem>(theList.Count); 
 
             foreach(inventoryItem i in theList)
             {

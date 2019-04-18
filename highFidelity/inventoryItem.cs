@@ -10,12 +10,12 @@ namespace highFidelity
 {
     public class inventoryItem
     {
-        public string id;
-        public string size;
-        public int stock;
-        public string color;
-        public string model;
-        public double cost;
+        public string id { get; set; }
+        public string size { get; set; }
+        public int stock { get; set; }
+        public string color { get; set; }
+        public string model { get; set; }
+        public double cost { get; set; }
 
         //constructor
         public inventoryItem(string id, string size, int stock, string color, string model, double cost)
