@@ -65,14 +65,6 @@ namespace highFidelity
 
         }
 
-        //public void displayAll()
-        //{
-        //    for (int i = 0; i < theList.Count; i++)
-        //    {
-        //        theList[i];
-        //    }
-        //}
-
         public inventoryItem findByID(string search)
         {
             inventoryItem result = null;
@@ -119,6 +111,33 @@ namespace highFidelity
 
 
         }
+
+        public int searchFor(String search, int i)
+        {
+
+            //if statement checks to see if there is a match to every property
+            if (theList[i].id == search || theList[i].size == search || theList[i].stock == int.Parse(search) || theList[i].color == search || theList[i].model == search || theList[i].cost == double.Parse(search))
+            {
+                //returns the number in the contact list if it finds one
+
+                return i;
+            }
+
+            //returns -1 if it doesnt find one
+            return -1;
+
+        }
+
+        //public List<inventoryItem> searchList()
+        //{
+        //    List<inventoryItem> searchList = new List<inventoryItem>();
+
+        //    foreach( inventoryItem i in theList)
+        //    {
+        //        if()
+        //    }
+
+        //}
 
     }
 }

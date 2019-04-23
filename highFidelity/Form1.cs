@@ -19,13 +19,13 @@ namespace highFidelity
         public inventoryManager itemList = new inventoryManager();
 
 
+
         public Form1()
         {
             InitializeComponent();
-            btn_update.Enabled = false;
             btn_edit.Enabled = false;
             MessageBox.Show(itemList.sizeOf() + "");
-            
+
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -80,7 +80,6 @@ namespace highFidelity
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
-            //assigning the index of the list box to i 
 
             //using i as the index of the List and setting the text boxes to what the values are
             //from the selected index in the array
@@ -104,60 +103,17 @@ namespace highFidelity
             target.color = txtbx_color.Text;
             target.model = txtbx_model.Text;
             target.cost = double.Parse(txtbx_cost.Text);
-            btn_update.Enabled = true;
             btn_add.Enabled = false;
         }
 
-        private void btn_update_Click(object sender, EventArgs e)
-        {
-            //int i = lstbx_items.SelectedIndex;
-
-            //inventoryItem target = itemList.findByID(i.ToString());
-
-            ////filling the textboxes with the properties of the desired item
-            //target.size = txtbx_size.Text;
-            //target.stock = int.Parse(txtbx_stock.Text);
-            //target.model = txtbx_model.Text;
-            //target.size = txtbx_size.Text;
-            //target.cost = txtbx_cost.Text;
-
-            ////clearing the list box so that the old stuff doesn't stay in there
-            //lstbx_items.Items.Clear();
-
-            ////making the list box again with the array list so that the updated array list is displayed
-            //for (int j = 0; j < itemList.getAllItems().Length; j++)
-            //{
-            //    //not sure if this one works
-            //    lstbx_items.Items.Add(itemList.theList[j]);
-            //}
-
-            ////resetting the text boxes back to blank
-            //txtbx_size.Text = "";
-            //txtbx_stock.Text = "";
-            //txtbx_color.Text = "";
-            //txtbx_model.Text = "";
-            //txtbx_cost.Text = "";
-            //btn_add.Enabled = true;
-            //btn_update.Enabled = false;
-            //btn_edit.Enabled = false;
-        }
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            //int i = lstbx_items.SelectedIndex;
+            int i = dgv_items.CurrentCell.RowIndex;
 
-            //inventoryItem target = lstbx_items.GetType();
+            inventoryItem target = itemList.getItemList()[i];
 
-            //itemList.removeItem(target);
-
-            //lstbx_items.Items.Clear();
-
-            //inventoryItem[] mirror = itemList.getAllItems();
-
-            //for (int j = 0; j < itemList.theList.Count; j++)
-            //{
-            //    lstbx_items.Items.Add(itemList.theList[j]);
-            //}
+            itemList.removeItem(target);
 
         }
 
@@ -175,5 +131,38 @@ namespace highFidelity
         {
             btn_edit.Enabled = true;
         }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            string search = txtbx_search.Text;
+            List<inventoryItem> mirror = itemList.getItemList();
+            List<inventoryItem> searchList = new List<inventoryItem>();
+
+            int stock;
+            int.TryParse(search, out stock);
+            double cost;
+            double.TryParse(search, out cost);
+
+            for (int i = 0; i < mirror.Count; i++)
+            {
+                if (mirror[i].id.Contains(search) || mirror[i].size.Contains(search) || mirror[i].stock.ToString().Contains(stock.ToString()) || mirror[i].color.Contains( search ) || mirror[i].model.Contains( search ) || mirror[i].cost.ToString().Contains( cost.ToString()))
+                {
+                    searchList.Add(mirror[i]);
+                }
+
+                
+
+
+            }
+            searchForm searchForm = new searchForm(searchList, search);
+            searchForm.ShowDialog();
+        }
+
+      
+
+        
+
+
     }
+
 }
