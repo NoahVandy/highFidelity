@@ -15,8 +15,9 @@ namespace highFidelity
 {
     public partial class Form1 : Form
     {
-        public static System.IO.StreamWriter sw;
+        public static System.IO.StreamWriter sw; 
         public inventoryManager itemList = new inventoryManager();
+        
 
 
 
@@ -25,6 +26,7 @@ namespace highFidelity
             InitializeComponent();
             btn_edit.Enabled = false;
             MessageBox.Show(itemList.sizeOf() + "");
+            sw = new System.IO.StreamWriter("inventoryManager.out");
 
         }
 

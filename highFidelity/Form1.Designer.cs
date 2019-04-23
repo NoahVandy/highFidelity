@@ -181,9 +181,9 @@
             this.lbl_edit.Font = new System.Drawing.Font("Javanese Text", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_edit.Location = new System.Drawing.Point(1526, 51);
             this.lbl_edit.Name = "lbl_edit";
-            this.lbl_edit.Size = new System.Drawing.Size(248, 102);
+            this.lbl_edit.Size = new System.Drawing.Size(242, 102);
             this.lbl_edit.TabIndex = 17;
-            this.lbl_edit.Text = "Edit Items";
+            this.lbl_edit.Text = "Add items";
             // 
             // txtbx_model
             // 
