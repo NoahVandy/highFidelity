@@ -15,8 +15,11 @@ namespace highFidelity
         public searchForm(List<inventoryItem> searchList, string search)
         {
             InitializeComponent();
+
+            //this sets the label on this form to the string that was passed in from the other form
             lbl_searchResults.Text = "Search results for: " + search;
-            dgv_search.DataSource = searchList;
+            //this sets the dgv to the list that was passed in from the other form
+            dgv_search.DataSource = searchList; 
         }
 
 

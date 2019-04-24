@@ -178,16 +178,23 @@ namespace highFidelity
             List<inventoryItem> mirror = itemList.getItemList();
 
             List<inventoryItem> searchList = new List<inventoryItem>();
+            
 
+            //making the numbers of the item into strings
             int stock;
             int.TryParse(search, out stock);
             double cost;
             double.TryParse(search, out cost);
 
+
+            //this is running throught the list with a copy
             for (int i = 0; i < mirror.Count; i++)
             {
+                //this checks if any item in the list is equal to the string that was passed in to search
                 if (mirror[i].id.Contains(search) || mirror[i].size.Contains(search) || mirror[i].stock.ToString().Contains(stock.ToString()) || mirror[i].color.Contains( search ) || mirror[i].model.Contains( search ) || mirror[i].cost.ToString().Contains( cost.ToString()))
                 {
+
+                    //this adds the item if its a match to the empty list
                     searchList.Add(mirror[i]);
                 }
 
@@ -196,7 +203,7 @@ namespace highFidelity
 
             }
 
-
+            //this passes the list and search string into the second form
             searchForm searchForm = new searchForm(searchList, search);
             searchForm.ShowDialog();
         }
