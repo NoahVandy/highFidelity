@@ -49,7 +49,6 @@
             this.btn_refresh = new System.Windows.Forms.Button();
             this.txtbx_search = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
-            this.btn_edit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_items)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,9 +87,9 @@
             // btn_delete
             // 
             this.btn_delete.BackColor = System.Drawing.Color.White;
-            this.btn_delete.Location = new System.Drawing.Point(767, 265);
+            this.btn_delete.Location = new System.Drawing.Point(199, 265);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(582, 118);
+            this.btn_delete.Size = new System.Drawing.Size(1150, 118);
             this.btn_delete.TabIndex = 5;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = false;
@@ -260,17 +259,6 @@
             this.btn_search.UseVisualStyleBackColor = false;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
-            // btn_edit
-            // 
-            this.btn_edit.BackColor = System.Drawing.Color.White;
-            this.btn_edit.Location = new System.Drawing.Point(199, 265);
-            this.btn_edit.Name = "btn_edit";
-            this.btn_edit.Size = new System.Drawing.Size(572, 118);
-            this.btn_edit.TabIndex = 4;
-            this.btn_edit.Text = "Edit";
-            this.btn_edit.UseVisualStyleBackColor = false;
-            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -295,7 +283,6 @@
             this.Controls.Add(this.lbl_size);
             this.Controls.Add(this.lbl_color);
             this.Controls.Add(this.btn_delete);
-            this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.lbl_ineventoryName);
             this.Controls.Add(this.lbl_search);
@@ -336,7 +323,6 @@
         private System.Windows.Forms.DataGridView dgv_items;
         private System.Windows.Forms.TextBox txtbx_search;
         private System.Windows.Forms.Button btn_search;
-        private System.Windows.Forms.Button btn_edit;
     }
 }
 

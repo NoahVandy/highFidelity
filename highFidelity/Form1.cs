@@ -16,6 +16,9 @@ namespace highFidelity
     public partial class Form1 : Form
     {
 
+
+
+
         public static System.IO.StreamReader sr;
         public static System.IO.StreamWriter sw; 
         public inventoryManager itemList = new inventoryManager();
@@ -26,7 +29,11 @@ namespace highFidelity
         public Form1()
         {
             InitializeComponent();
-            btn_edit.Enabled = false;
+
+            this.AutoSize = true;
+            this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+
+            
 
 
             sr = new System.IO.StreamReader("inventoryManager.txt");
@@ -164,15 +171,12 @@ namespace highFidelity
 
         }
 
-        private void dgv_items_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            btn_edit.Enabled = true;
-        }
 
         private void btn_search_Click(object sender, EventArgs e)
         {
             string search = txtbx_search.Text;
             List<inventoryItem> mirror = itemList.getItemList();
+
             List<inventoryItem> searchList = new List<inventoryItem>();
 
             int stock;
@@ -191,6 +195,8 @@ namespace highFidelity
 
 
             }
+
+
             searchForm searchForm = new searchForm(searchList, search);
             searchForm.ShowDialog();
         }
