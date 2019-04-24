@@ -105,21 +105,24 @@ namespace highFidelity
 
         }
 
-        public int searchFor(String search, int i)
-        {
 
-            //if statement checks to see if there is a match to every property
-            if (theList[i].id == search || theList[i].size == search || theList[i].stock == int.Parse(search) || theList[i].color == search || theList[i].model == search || theList[i].cost == double.Parse(search))
-            {
-                //returns the number in the contact list if it finds one
+        // this was what I was going to try to use for the search but ended up scrapping it
 
-                return i;
-            }
+        //public int searchFor(String search, int i)
+        //{
 
-            //returns -1 if it doesnt find one
-            return -1;
+        //    //if statement checks to see if there is a match to every property
+        //    if (theList[i].id == search || theList[i].size == search || theList[i].stock == int.Parse(search) || theList[i].color == search || theList[i].model == search || theList[i].cost == double.Parse(search))
+        //    {
+        //        //returns the number in the contact list if it finds one
 
-        }
+        //        return i;
+        //    }
+
+        //    //returns -1 if it doesnt find one
+        //    return -1;
+
+        //}
 
     }
 }
