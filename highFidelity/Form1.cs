@@ -171,6 +171,9 @@ namespace highFidelity
         private void btn_search_Click(object sender, EventArgs e)
         {
             string search = txtbx_search.Text;
+
+            txtbx_search.Text = "";
+
             List<inventoryItem> mirror = itemList.getItemList();
 
             List<inventoryItem> searchList = new List<inventoryItem>();
@@ -202,6 +205,9 @@ namespace highFidelity
             //this passes the list and search string into the second form
             searchForm searchForm = new searchForm(searchList, search);
             searchForm.ShowDialog();
+
+
+
         }
 
         private void btn_save_Click(object sender, EventArgs e)
