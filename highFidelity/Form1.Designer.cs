@@ -31,7 +31,6 @@
             this.lbl_ineventoryName = new System.Windows.Forms.Label();
             this.lbl_search = new System.Windows.Forms.Label();
             this.btn_add = new System.Windows.Forms.Button();
-            this.btn_edit = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.txtbx_size = new System.Windows.Forms.TextBox();
             this.txtbx_color = new System.Windows.Forms.TextBox();
@@ -50,6 +49,7 @@
             this.btn_refresh = new System.Windows.Forms.Button();
             this.txtbx_search = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
+            this.btn_edit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_items)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,17 +84,6 @@
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = false;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
-            // 
-            // btn_edit
-            // 
-            this.btn_edit.BackColor = System.Drawing.Color.White;
-            this.btn_edit.Location = new System.Drawing.Point(199, 265);
-            this.btn_edit.Name = "btn_edit";
-            this.btn_edit.Size = new System.Drawing.Size(572, 118);
-            this.btn_edit.TabIndex = 4;
-            this.btn_edit.Text = "Edit";
-            this.btn_edit.UseVisualStyleBackColor = false;
-            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
             // btn_delete
             // 
@@ -271,6 +260,17 @@
             this.btn_search.UseVisualStyleBackColor = false;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
+            // btn_edit
+            // 
+            this.btn_edit.BackColor = System.Drawing.Color.White;
+            this.btn_edit.Location = new System.Drawing.Point(199, 265);
+            this.btn_edit.Name = "btn_edit";
+            this.btn_edit.Size = new System.Drawing.Size(572, 118);
+            this.btn_edit.TabIndex = 4;
+            this.btn_edit.Text = "Edit";
+            this.btn_edit.UseVisualStyleBackColor = false;
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -318,7 +318,6 @@
         private System.Windows.Forms.Label lbl_ineventoryName;
         private System.Windows.Forms.Label lbl_search;
         private System.Windows.Forms.Button btn_add;
-        private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.TextBox txtbx_size;
         private System.Windows.Forms.TextBox txtbx_color;
@@ -337,6 +336,7 @@
         private System.Windows.Forms.DataGridView dgv_items;
         private System.Windows.Forms.TextBox txtbx_search;
         private System.Windows.Forms.Button btn_search;
+        private System.Windows.Forms.Button btn_edit;
     }
 }
 

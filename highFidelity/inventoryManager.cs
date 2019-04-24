@@ -19,13 +19,6 @@ namespace highFidelity
         {
             theList = new List<inventoryItem>();
 
-            inventoryItem item1 = new inventoryItem("124e", "5", 70, "Blue", "Classics", 10.99);
-            theList.Add(item1);
-            inventoryItem item2 = new inventoryItem("125e", "6", 71, "Orange", "Classics", 15.99);
-            theList.Add(item2);
-            inventoryItem item3 = new inventoryItem("126e", "7", 99, "Red", "Lows", 49.99);
-            theList.Add(item3);
-
         }
 
         public bool Add(inventoryItem item)
@@ -127,17 +120,6 @@ namespace highFidelity
             return -1;
 
         }
-
-        //public List<inventoryItem> searchList()
-        //{
-        //    List<inventoryItem> searchList = new List<inventoryItem>();
-
-        //    foreach( inventoryItem i in theList)
-        //    {
-        //        if()
-        //    }
-
-        //}
 
     }
 }

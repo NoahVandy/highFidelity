@@ -15,6 +15,8 @@ namespace highFidelity
 {
     public partial class Form1 : Form
     {
+
+        public static System.IO.StreamReader sr;
         public static System.IO.StreamWriter sw; 
         public inventoryManager itemList = new inventoryManager();
         
@@ -25,8 +27,21 @@ namespace highFidelity
         {
             InitializeComponent();
             btn_edit.Enabled = false;
-            MessageBox.Show(itemList.sizeOf() + "");
-            sw = new System.IO.StreamWriter("inventoryManager.out");
+
+
+            sr = new System.IO.StreamReader("inventoryManager.txt");
+
+            while (!sr.EndOfStream)
+            {
+                string line = sr.ReadLine();
+                string[] fileLine = line.Split(',');
+
+                inventoryItem fileItem = new inventoryItem(fileLine[0], fileLine[1], int.Parse(fileLine[2]), fileLine[3], fileLine[4], double.Parse(fileLine[5]));
+
+                itemList.Add(fileItem);
+                
+            }
+            sr.Close();
 
         }
 
@@ -35,6 +50,8 @@ namespace highFidelity
             //idk why I need a try catch but it is in there just in case
             try
             {
+
+                sw = new System.IO.StreamWriter("inventoryManager.txt");
                 //making the parameters for the class equal to what are in the text boxes
                 string id = txtbx_id.Text;
                 string size = txtbx_size.Text;
@@ -48,10 +65,15 @@ namespace highFidelity
                 inventoryItem item = new inventoryItem(id, size, stock, color, model, cost);
                 //adding it to the List
                 bool result = itemList.Add(item);
+
                 
-                if(result == true)
+
+                if (result == true)
                 {
                     MessageBox.Show("Added successfully");
+
+                    sw.WriteLine(item.ToString());
+
                 }
                 else
                 {
@@ -59,7 +81,20 @@ namespace highFidelity
                 }
 
 
-                
+                List<inventoryItem> mirror = itemList.getItemList();
+
+
+
+                //foreach (inventoryItem i in mirror)
+                //{
+                //    sw.WriteLine(item.id + "," + item.size + ",", item.stock + "," + item.color + "," + item.model + "," + item.cost);
+                //}
+
+
+                sw.Close();
+
+
+
 
 
 
