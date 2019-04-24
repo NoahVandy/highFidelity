@@ -58,7 +58,7 @@ namespace highFidelity
             try
             {
 
-                sw = new System.IO.StreamWriter("inventoryManager.txt");
+
                 //making the parameters for the class equal to what are in the text boxes
                 string id = txtbx_id.Text;
                 string size = txtbx_size.Text;
@@ -79,17 +79,13 @@ namespace highFidelity
                 {
                     MessageBox.Show("Added successfully");
 
-                    sw.WriteLine(item.ToString());
+
 
                 }
                 else
                 {
                     MessageBox.Show("Error adding");
                 }
-
-
-                List<inventoryItem> mirror = itemList.getItemList();
-
 
 
                 //foreach (inventoryItem i in mirror)
@@ -208,11 +204,21 @@ namespace highFidelity
             searchForm.ShowDialog();
         }
 
-      
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            sw = new System.IO.StreamWriter("inventoryManager.txt");
 
-        
+            List<inventoryItem> mirror = itemList.getItemList();
 
+            MessageBox.Show("Saved successfully"); 
 
+            foreach (inventoryItem i in mirror)
+            {
+                sw.WriteLine(i.ToString());
+            }
+
+            sw.Close();
+        }
     }
 
 }

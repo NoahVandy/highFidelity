@@ -49,6 +49,7 @@
             this.btn_refresh = new System.Windows.Forms.Button();
             this.txtbx_search = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
+            this.btn_save = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_items)).BeginInit();
             this.SuspendLayout();
             // 
@@ -227,7 +228,6 @@
             this.dgv_items.RowTemplate.Height = 37;
             this.dgv_items.Size = new System.Drawing.Size(1313, 643);
             this.dgv_items.TabIndex = 26;
-            this.dgv_items.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_items_CellContentClick);
             // 
             // btn_refresh
             // 
@@ -259,6 +259,17 @@
             this.btn_search.UseVisualStyleBackColor = false;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
+            // btn_save
+            // 
+            this.btn_save.BackColor = System.Drawing.Color.White;
+            this.btn_save.Location = new System.Drawing.Point(1530, 1136);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(350, 111);
+            this.btn_save.TabIndex = 30;
+            this.btn_save.Text = "Save";
+            this.btn_save.UseVisualStyleBackColor = false;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -266,6 +277,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1972, 1421);
+            this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.txtbx_search);
             this.Controls.Add(this.btn_refresh);
@@ -323,6 +335,7 @@
         private System.Windows.Forms.DataGridView dgv_items;
         private System.Windows.Forms.TextBox txtbx_search;
         private System.Windows.Forms.Button btn_search;
+        private System.Windows.Forms.Button btn_save;
     }
 }
 
